@@ -75,15 +75,6 @@ Eine Anwendung zur Produktverwaltung (CRUD).
 - Repository: [github.com/lobnaelamrany/produktverwaltung](https://github.com/lobnaelamrany/produktverwaltung)
 - Technologien: Laravel, Blade, MySQL, CSS
 
----
-
-GitHub Statistiken
-
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=lobnaelamrany&show_icons=true&theme=gruvbox)
-
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=lobnaelamrany&layout=compact&theme=gruvbox)
-
----
 
 Kontakt
 
