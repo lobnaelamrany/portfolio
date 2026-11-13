@@ -2,7 +2,6 @@
    COMPONENTS — buttons, cards, accordion, tags
    ============================================ */
 
-/* ---------- BUTTONS ---------- */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -56,7 +55,6 @@
   color: var(--color-accent);
 }
 
-/* ---------- TECH TAGS ---------- */
 .tech-tags {
   display: flex;
   flex-wrap: wrap;
@@ -75,7 +73,6 @@
   border-radius: var(--radius-full);
 }
 
-/* ---------- TECH LIST (skills) ---------- */
 .tech-list {
   display: flex;
   flex-wrap: wrap;
@@ -100,7 +97,6 @@
   color: var(--color-text-primary);
 }
 
-/* ---------- BADGES ---------- */
 .badge {
   display: inline-block;
   padding: var(--space-1) var(--space-3);
@@ -122,7 +118,6 @@
   background-color: var(--color-progress-bg);
 }
 
-/* ---------- PROJECT CARD (accordion) ---------- */
 .project-card {
   background-color: var(--color-bg);
   border: 1px solid var(--color-border);
@@ -254,7 +249,6 @@
   gap: var(--space-4);
 }
 
-/* ---------- LANGUAGE LIST ITEM ---------- */
 .language-list li {
   display: flex;
   justify-content: space-between;
@@ -284,7 +278,6 @@
   border-radius: var(--radius-full);
 }
 
-/* ---------- CONTACT ITEM ---------- */
 .contact-list li {
   display: flex;
   flex-direction: column;
@@ -319,7 +312,6 @@
   color: var(--color-accent);
 }
 
-/* ---------- LANGUAGE SWITCHER ---------- */
 .lang-switch {
   display: inline-flex;
   align-items: center;
@@ -347,7 +339,6 @@
   font-weight: 400;
 }
 
-/* ---------- THEME TOGGLE ---------- */
 .theme-toggle {
   display: inline-flex;
   align-items: center;
@@ -378,7 +369,6 @@
   display: block;
 }
 
-/* ---------- MENU TOGGLE (mobile) ---------- */
 .menu-toggle {
   display: none;
   flex-direction: column;
@@ -422,22 +412,19 @@
 @media (max-width: 900px) {
   .main-nav {
     position: fixed;
-    inset: 0;
-    background-color: var(--color-bg);
+    top: 0;
+    left: 0;
+    width: 100vw; /* العرض كامل ديال الشاشة */
+    height: 100vh; /* الطول كامل ديال الشاشة */
+    background-color: var(--color-bg); /* خلفية صلبة 100% */
     padding: 6rem var(--container-px) var(--space-8);
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    transition: opacity var(--dur-base) var(--ease-out),
-                visibility var(--dur-base) var(--ease-out);
-    z-index: 9999;
+    display: none; /* مخبية بالكامل فالبداية */
+    z-index: 99999; /* فوق الصورة وفوق أي حاجة */
     overflow-y: auto;
   }
 
   .main-nav.is-open {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
+    display: block; /* كتبان ملي كتحلها */
   }
 
   .main-nav ul {
@@ -463,7 +450,7 @@
 
   .menu-toggle {
     display: inline-flex;
-    z-index: 100000;
+    z-index: 100000; /* زر الإغلاق فوق كلشي */
     position: relative;
   }
 }
