@@ -1,0 +1,64 @@
+/* ============================================
+   THEMES — Dark mode overrides
+   ============================================ */
+
+[data-theme="dark"] {
+  /* ---------- COLORS — DARK MODE ---------- */
+  --color-bg:               #1F181C;
+  --color-surface:          #2A2127;
+  --color-surface-elevated: #332930;
+  --color-text-primary:     #F0EAE6;
+  --color-text-secondary:   #C4B8BD;
+  --color-text-muted:       #958A8F;
+
+  /* Primary accent — Light Burgundy */
+  --color-accent:           #C08A98;
+  --color-accent-hover:     #D4A5B0;
+
+  /* Secondary accent — Soft Blush */
+  --color-accent-soft:      #E0B8B4;
+  --color-accent-soft-hover:#EDCBC7;
+
+  /* Tertiary — Light Gold */
+  --color-gold:             #D4B57A;
+  --color-gold-soft:        #3A3020;
+
+  /* Borders */
+  --color-border:           #3A3036;
+  --color-border-strong:    #4F4449;
+  --color-focus-ring:       #C08A98;
+
+  /* Status */
+  --color-success:          #C08A98;
+  --color-success-bg:       #3A2A30;
+  --color-progress:         #D4A5B5;
+  --color-progress-bg:      #3A2A30;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.6);
+}
+
+/* ---------- DARK MODE SPECIFIC FIXES ---------- */
+
+[data-theme="dark"] .btn-primary {
+  color: #1F181C;
+}
+
+[data-theme="dark"] .btn-primary:hover {
+  color: #1F181C;
+}
+
+[data-theme="dark"] .portrait-frame::before {
+  opacity: 0.25;
+}
+
+[data-theme="dark"] ::selection {
+  background: var(--color-accent-soft);
+  color: var(--color-text-primary);
+}
+
+[data-theme="dark"] .site-header {
+  background-color: color-mix(in srgb, var(--color-bg) 88%, transparent);
+}

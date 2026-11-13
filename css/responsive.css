@@ -1,0 +1,197 @@
+/* ============================================
+   RESPONSIVE — mobile-first media queries
+   ============================================ */
+
+/* ---------- SMALL PHONES (default: 320px+) ---------- */
+@media (max-width: 400px) {
+  .hero-name {
+    font-size: clamp(2.5rem, 12vw, 3.5rem);
+  }
+
+  .goal-card {
+    padding: var(--space-6);
+  }
+
+  .experience-card {
+    padding: var(--space-6);
+  }
+
+  .project-card summary {
+    padding: var(--space-4);
+  }
+
+  .project-details {
+    padding: 0 var(--space-4) var(--space-4);
+  }
+
+  .project-summary {
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .project-meta {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+/* ---------- TABLETS (600px+) ---------- */
+@media (min-width: 600px) {
+  .footer-inner {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-copy {
+    flex-basis: 100%;
+    text-align: center;
+    margin-top: var(--space-4);
+  }
+}
+
+/* ---------- MOBILE HERO FIX (Image First, Text Below) ---------- */
+@media (max-width: 899px) {
+  .hero-grid {
+    display: flex;
+    flex-direction: column; /* كنرتبو عادي من الفوق لتحت */
+    gap: var(--space-8);
+  }
+  
+  .hero-portrait {
+    order: -1; /* الصورة كتاخد الرتبة -1 باش تطلع هي اللولة */
+    justify-content: center;
+  }
+
+  .portrait-frame {
+    max-width: 300px; /* حجم مناسب للتيليفون */
+    margin: 0 auto;
+  }
+
+  .hero-text {
+    text-align: center; /* النصوص فالوسط */
+  }
+  
+  .hero-actions {
+    justify-content: center; /* الأزرار فالوسط */
+  }
+}
+
+/* ---------- SMALL DESKTOPS (900px+) ---------- */
+@media (min-width: 900px) {
+  /* Nav is always visible on desktop */
+  .main-nav {
+    position: static;
+    transform: none;
+    opacity: 1;
+    pointer-events: auto;
+    background: none;
+    padding: 0;
+    overflow: visible;
+  }
+
+  .main-nav ul {
+    flex-direction: row;
+    gap: var(--space-6);
+  }
+
+  .main-nav a {
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    padding-block: var(--space-2);
+  }
+
+  .menu-toggle {
+    display: none;
+  }
+
+  .projects-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+}
+
+/* ---------- LARGE DESKTOPS (1200px+) ---------- */
+@media (min-width: 1200px) {
+  .section-header {
+    margin-bottom: var(--space-16);
+  }
+
+  .goal-card {
+    padding: var(--space-12) var(--space-16);
+  }
+
+  .project-summary {
+    align-items: center;
+  }
+}
+
+/* ---------- PRINT STYLES ---------- */
+@media print {
+  .site-header,
+  .menu-toggle,
+  .theme-toggle,
+  .lang-switch,
+  .hero-actions,
+  .footer-links {
+    display: none !important;
+  }
+
+  body {
+    background: white;
+    color: black;
+  }
+
+  .section {
+    padding-block: var(--space-6);
+    page-break-inside: avoid;
+  }
+
+  a {
+    color: black;
+    text-decoration: underline;
+  }
+
+  a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+    color: #555;
+  }
+
+  .project-card[open] .project-details {
+    display: block;
+  }
+}
+
+/* ---------- HIGH CONTRAST MODE ---------- */
+@media (prefers-contrast: more) {
+  :root {
+    --color-border: var(--color-text-primary);
+    --color-border-strong: var(--color-text-primary);
+  }
+
+  .btn {
+    border-width: 2px;
+  }
+
+  .tech-tags li,
+  .tech-list li {
+    border-width: 2px;
+  }
+}
+
+/* ---------- FORCED COLORS (Windows High Contrast) ---------- */
+@media (forced-colors: active) {
+  .btn,
+  .project-card,
+  .tech-tags li,
+  .tech-list li {
+    border: 1px solid ButtonText;
+  }
+
+  .badge {
+    border: 1px solid;
+  }
+}
