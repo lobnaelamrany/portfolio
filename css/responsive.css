@@ -76,7 +76,7 @@
 
   /* إصلاح مشكل الـ Scroll فـ التيليفون */
   html {
-    scroll-padding-top: 6rem; /* زدنا المسافة باش النص مايتقطعش */
+    scroll-padding-top: 6rem; 
   }
 
   #hero {
