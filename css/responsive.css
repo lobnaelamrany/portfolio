@@ -8,10 +8,7 @@
     font-size: clamp(2.5rem, 12vw, 3.5rem);
   }
 
-  .goal-card {
-    padding: var(--space-6);
-  }
-
+  .goal-card,
   .experience-card {
     padding: var(--space-6);
   }
@@ -55,32 +52,45 @@
 @media (max-width: 899px) {
   .hero-grid {
     display: flex;
-    flex-direction: column; /* كنرتبو عادي من الفوق لتحت */
+    flex-direction: column;
     gap: var(--space-8);
   }
   
   .hero-portrait {
-    order: -1; /* الصورة كتاخد الرتبة -1 باش تطلع هي اللولة */
+    order: -1; /* الصورة كتجي اللولة */
     justify-content: center;
   }
 
   .portrait-frame {
-    max-width: 300px; /* حجم مناسب للتيليفون */
+    max-width: 300px;
     margin: 0 auto;
   }
 
   .hero-text {
-    text-align: center; /* النصوص فالوسط */
+    text-align: center;
   }
   
   .hero-actions {
-    justify-content: center; /* الأزرار فالوسط */
+    justify-content: center;
+  }
+
+  /* إصلاح مشكل الـ Scroll فـ التيليفون */
+  html {
+    scroll-padding-top: 4.5rem; /* المسافة ديال الـ Header */
+  }
+
+  /* كنمنعو الـ Scroll من التوقف عند الصورة */
+  #hero {
+    scroll-margin-top: 0;
+  }
+
+  section:not(#hero) {
+    scroll-margin-top: 4.5rem; /* كيخلي الأقسام توقف مزيان تحت الـ Header */
   }
 }
 
 /* ---------- SMALL DESKTOPS (900px+) ---------- */
 @media (min-width: 900px) {
-  /* Nav is always visible on desktop */
   .main-nav {
     position: static;
     transform: none;
