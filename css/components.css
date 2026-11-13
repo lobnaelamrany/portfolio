@@ -293,7 +293,7 @@
   background-color: var(--color-bg);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
-  align-items: flex-start; 
+  align-items: flex-start;
 }
 
 .contact-list li:hover {
@@ -422,15 +422,15 @@
 @media (max-width: 900px) {
   .main-nav {
     position: fixed;
-    inset: 4.5rem 0 0 0;
-    background-color: var(--color-bg); /* خلفية صلبة */
-    padding: var(--space-8) var(--container-px);
+    inset: 0; /* الشاشة كاملة */
+    background-color: var(--color-bg);
+    padding: 6rem var(--container-px) var(--space-8); /* مساحة فوق باش ماتغطيش اللوگو */
     transform: translateY(-100%);
     opacity: 0;
     pointer-events: none;
     transition: transform var(--dur-slow) var(--ease-out),
                 opacity var(--dur-base) var(--ease-out);
-    z-index: 999; /* عطيناها رقم كبير باش تغطي الصورة */
+    z-index: 999; /* فوق كلشي */
     overflow-y: auto;
   }
 
@@ -443,7 +443,8 @@
   .main-nav ul {
     flex-direction: column;
     align-items: flex-start;
-    gap: var(--space-2);
+    gap: var(--space-4);
+    margin-top: 2rem;
   }
 
   .main-nav a {
@@ -451,7 +452,7 @@
     font-size: var(--text-2xl);
     font-weight: 600;
     color: var(--color-text-primary);
-    padding-block: var(--space-3);
+    padding-block: var(--space-2);
   }
 
   .main-nav a::after {
@@ -461,5 +462,6 @@
   .menu-toggle {
     display: inline-flex;
     z-index: 1000; /* زر القائمة فوق كلشي */
+    position: relative;
   }
 }
