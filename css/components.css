@@ -19,7 +19,6 @@
               border-color var(--dur-fast) var(--ease-out);
   cursor: pointer;
   text-align: center;
-  /* حيدنا white-space: nowrap; باش النص يقدر يتقسم */
 }
 
 .btn-primary {
@@ -294,7 +293,7 @@
   background-color: var(--color-bg);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
-  align-items: flex-start; /* باش المحتوى يبقى فاليسار */
+  align-items: flex-start; 
 }
 
 .contact-list li:hover {
@@ -319,9 +318,6 @@
 .contact-list a:hover {
   color: var(--color-accent);
 }
-
-/* ---------- CONTACT CV BUTTON (NEW FIX) ---------- */
-/* ---------- CONTACT CV BUTTON (NEW FIX) ---------- */
 
 /* ---------- LANGUAGE SWITCHER ---------- */
 .lang-switch {
@@ -427,14 +423,14 @@
   .main-nav {
     position: fixed;
     inset: 4.5rem 0 0 0;
-    background-color: var(--color-bg);
+    background-color: var(--color-bg); /* خلفية صلبة */
     padding: var(--space-8) var(--container-px);
     transform: translateY(-100%);
     opacity: 0;
     pointer-events: none;
     transition: transform var(--dur-slow) var(--ease-out),
                 opacity var(--dur-base) var(--ease-out);
-    z-index: 90;
+    z-index: 999; /* عطيناها رقم كبير باش تغطي الصورة */
     overflow-y: auto;
   }
 
@@ -464,5 +460,6 @@
 
   .menu-toggle {
     display: inline-flex;
+    z-index: 1000; /* زر القائمة فوق كلشي */
   }
 }
