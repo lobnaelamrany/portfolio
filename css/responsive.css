@@ -57,7 +57,7 @@
   }
   
   .hero-portrait {
-    order: -1; /* الصورة كتجي اللولة */
+    order: -1; 
     justify-content: center;
   }
 
@@ -76,16 +76,15 @@
 
   /* إصلاح مشكل الـ Scroll فـ التيليفون */
   html {
-    scroll-padding-top: 4.5rem; /* المسافة ديال الـ Header */
+    scroll-padding-top: 5rem; 
   }
 
-  /* كنمنعو الـ Scroll من التوقف عند الصورة */
   #hero {
-    scroll-margin-top: 0;
+    scroll-margin-top: 0; 
   }
 
   section:not(#hero) {
-    scroll-margin-top: 4.5rem; /* كيخلي الأقسام توقف مزيان تحت الـ Header */
+    scroll-margin-top: 5rem; 
   }
 }
 
@@ -99,6 +98,7 @@
     background: none;
     padding: 0;
     overflow: visible;
+    z-index: auto;
   }
 
   .main-nav ul {
