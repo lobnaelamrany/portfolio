@@ -7,23 +7,19 @@
 
   document.addEventListener('DOMContentLoaded', function () {
 
-    /* ---------- MOBILE MENU ---------- */
+    /* ---------- MOBILE MENU (ROBUST) ---------- */
     const menuToggle = document.getElementById('menuToggle');
-    const mainNav = document.querySelector('.main-nav');
+    const mainNav = document.getElementById('mainNav');
 
     if (menuToggle && mainNav) {
       menuToggle.addEventListener('click', function () {
         const isOpen = mainNav.classList.toggle('is-open');
         menuToggle.setAttribute('aria-expanded', String(isOpen));
-        menuToggle.setAttribute(
-          'aria-label',
-          isOpen ? 'Close menu' : 'Open menu'
-        );
-        // Prevent body scroll when menu is open
+        menuToggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
         document.body.style.overflow = isOpen ? 'hidden' : '';
       });
 
-      // Close menu when clicking a nav link
+      // إغلاق القائمة فوراً عند النقر على أي رابط
       mainNav.querySelectorAll('a').forEach(function (link) {
         link.addEventListener('click', function () {
           mainNav.classList.remove('is-open');
@@ -33,7 +29,7 @@
         });
       });
 
-      // Close menu on Escape
+      // إغلاق القائمة بزر Escape
       document.addEventListener('keydown', function (e) {
         if (e.key === 'Escape' && mainNav.classList.contains('is-open')) {
           mainNav.classList.remove('is-open');
@@ -101,34 +97,4 @@
       );
 
       revealTargets.forEach(function (el) {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(12px)';
-        el.style.transition = 'opacity 400ms cubic-bezier(0.16, 1, 0.3, 1), transform 400ms cubic-bezier(0.16, 1, 0.3, 1)';
-      });
-
-      const revealObserver = new IntersectionObserver(
-        function (entries) {
-          entries.forEach(function (entry) {
-            if (entry.isIntersecting) {
-              entry.target.style.opacity = '1';
-              entry.target.style.transform = 'translateY(0)';
-              revealObserver.unobserve(entry.target);
-            }
-          });
-        },
-        { rootMargin: '0px 0px -10% 0px', threshold: 0.1 }
-      );
-
-      revealTargets.forEach(function (el) {
-        revealObserver.observe(el);
-      });
-    }
-
-    /* ---------- FOOTER YEAR ---------- */
-    const yearEl = document.getElementById('year');
-    if (yearEl) {
-      yearEl.textContent = new Date().getFullYear();
-    }
-
-  });
-})();
+       
