@@ -423,14 +423,14 @@
   .main-nav {
     position: fixed;
     inset: 0; /* الشاشة كاملة */
-    background-color: var(--color-bg);
-    padding: 6rem var(--container-px) var(--space-8); /* مساحة فوق باش ماتغطيش اللوگو */
+    background-color: var(--color-bg); /* خلفية صلبة 100% */
+    padding: 6rem var(--container-px) var(--space-8);
     transform: translateY(-100%);
     opacity: 0;
     pointer-events: none;
     transition: transform var(--dur-slow) var(--ease-out),
                 opacity var(--dur-base) var(--ease-out);
-    z-index: 999; /* فوق كلشي */
+    z-index: 9999; /* فوق الصورة وفوق أي حاجة أخرى */
     overflow-y: auto;
   }
 
@@ -453,6 +453,8 @@
     font-weight: 600;
     color: var(--color-text-primary);
     padding-block: var(--space-2);
+    display: block;
+    width: 100%;
   }
 
   .main-nav a::after {
@@ -461,7 +463,7 @@
 
   .menu-toggle {
     display: inline-flex;
-    z-index: 1000; /* زر القائمة فوق كلشي */
+    z-index: 100000; /* زر الإغلاق فوق كلشي */
     position: relative;
   }
 }
