@@ -57,7 +57,7 @@
   }
   
   .hero-portrait {
-    order: -1; 
+    order: -1;
     justify-content: center;
   }
 
@@ -76,15 +76,15 @@
 
   /* إصلاح مشكل الـ Scroll فـ التيليفون */
   html {
-    scroll-padding-top: 5rem; 
+    scroll-padding-top: 6rem; /* زدنا المسافة باش النص مايتقطعش */
   }
 
   #hero {
-    scroll-margin-top: 0; 
+    scroll-margin-top: 0;
   }
 
   section:not(#hero) {
-    scroll-margin-top: 5rem; 
+    scroll-margin-top: 6rem;
   }
 }
 
@@ -104,6 +104,7 @@
   .main-nav ul {
     flex-direction: row;
     gap: var(--space-6);
+    margin-top: 0;
   }
 
   .main-nav a {
