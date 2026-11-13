@@ -64,7 +64,7 @@
 .site-header {
   position: sticky;
   top: 0;
-  z-index: 100; /* هنا صلحنا المشكل باش القائمة تطلع فوقه */
+  z-index: 10000; /* عطيناها رقم كبير باش تبقى فوق القائمة */
   background-color: color-mix(in srgb, var(--color-bg) 92%, transparent);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
@@ -261,7 +261,7 @@
   object-position: center top;
   border-radius: var(--radius-lg);
   position: relative;
-  z-index: 1;
+  /* حيّدنا z-index من هنا باش ما تطلعش فوق القائمة */
 }
 
 /* ---------- GOAL CARD ---------- */
