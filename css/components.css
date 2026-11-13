@@ -422,21 +422,21 @@
 @media (max-width: 900px) {
   .main-nav {
     position: fixed;
-    inset: 0; /* الشاشة كاملة */
-    background-color: var(--color-bg); /* خلفية صلبة 100% */
+    inset: 0;
+    background-color: var(--color-bg);
     padding: 6rem var(--container-px) var(--space-8);
-    transform: translateY(-100%);
     opacity: 0;
+    visibility: hidden;
     pointer-events: none;
-    transition: transform var(--dur-slow) var(--ease-out),
-                opacity var(--dur-base) var(--ease-out);
-    z-index: 9999; /* فوق الصورة وفوق أي حاجة أخرى */
+    transition: opacity var(--dur-base) var(--ease-out),
+                visibility var(--dur-base) var(--ease-out);
+    z-index: 9999;
     overflow-y: auto;
   }
 
   .main-nav.is-open {
-    transform: translateY(0);
     opacity: 1;
+    visibility: visible;
     pointer-events: auto;
   }
 
@@ -463,7 +463,7 @@
 
   .menu-toggle {
     display: inline-flex;
-    z-index: 100000; /* زر الإغلاق فوق كلشي */
+    z-index: 100000;
     position: relative;
   }
 }
