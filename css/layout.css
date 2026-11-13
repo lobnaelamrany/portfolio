@@ -64,7 +64,7 @@
 .site-header {
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 100; /* هنا صلحنا المشكل باش القائمة تطلع فوقه */
   background-color: color-mix(in srgb, var(--color-bg) 92%, transparent);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
